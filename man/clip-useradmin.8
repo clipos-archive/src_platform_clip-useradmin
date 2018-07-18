@@ -1,0 +1,64 @@
+.TH CLIP_USERADMIN 8 "SEPTEMBER 2007" Linux "User Manuals"
+.SH NAME
+clip-useradmin \- CLIP user administration servers.
+.SH DESCRIPTION
+.B clip-useradmin
+is composed by three servers waiting for actions to perform concerning user administration.
+.PP
+\-
+.B usersrv
+should be used under any user account to modify its password.
+.PP
+\-
+.B usersrvaudit
+should be used under the audit account to modify its password.
+.PP
+\-
+.B usersrvadmin
+is intended to be run under an administrative account to manage users in general and
+to manage the administrative account itself.
+
+The administrative actions may be :
+.PP
+\-
+.BR modify
+: modifies the administrative account giving its login.
+.PP
+\-
+.BR create
+: creates an account giving its login, its type, its password and its 
+.I ${HOME}
+size.
+.PP
+\-
+.BR delete
+: deletes an account giving its login.
+.PP
+\-
+.BR lock
+: locks an account giving its login.
+.PP
+\-
+.BR unlock
+: unlocks an account giving its login.
+.PP
+\-
+.BR list
+: lists the accounts.
+.PP
+.B usersrv,
+.B usersrvaudit
+and
+.B usersrvadmin
+are activated through a
+.B
+userclt
+client program which connects to the socket opened by the server and exchanges
+informations regarding the actions wanted.
+.SH PARAMETERS
+The unique parameter is the login
+.BR login.
+.SH AUTHORS
+EADS Defence And Security Systems
+.SH SEE ALSO
+.BR clip-userclt (8)

@@ -1,0 +1,287 @@
+# ChangeLog for <app-clip>/<clip-useradmin>
+
+*clip-useradmin-1.2.7 (12 Feb 2015)
+
+  12 Feb 2015; ANSSI <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.2.7.ebuild, -clip-useradmin-1.2.6.ebuild:
+  Fix missing argument on "last" command (login > 8 chars).
+
+*clip-useradmin-1.2.6 (21 Jul 2009)
+
+  21 Jul 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.2.6.ebuild, -clip-useradmin-1.2.5.ebuild:
+  Support SLIM logins.
+
+*clip-useradmin-1.2.5 (24 Jun 2009)
+
+  24 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.2.5.ebuild, -clip-useradmin-1.2.4.ebuild:
+  Create priv_user and core_admin as members of a common group,
+  mount_update, rather than making priv_user a member of core_admin
+  to enable it to mount CD-ROMs in UPDATE.
+
+*clip-useradmin-1.2.4 (22 Jun 2009)
+
+  22 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.2.4.ebuild, -clip-useradmin-1.2.3.ebuild:
+  Support creation of 'priv_user' type users.
+
+*clip-useradmin-1.2.3 (16 Jun 2009)
+
+  16 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.2.3.ebuild, -clip-useradmin-1.2.2.ebuild:
+  Fix SSH host key paths when creating an AUDIT / ADMIN user.
+
+*clip-useradmin-1.2.2 (08 Jun 2009)
+
+  08 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.2.2.ebuild, -clip-useradmin-1.2.1.ebuild:
+  Fix unlock script. Fix accents in messages.
+
+  17 Apr 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  clip-useradmin-1.2.1.ebuild:
+  Switch to verictl2.eclass.
+
+*clip-useradmin-1.2.1 (18 Mar 2009)
+
+  18 Mar 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.2.1.ebuild, -clip-useradmin-1.2.0.ebuild:
+  Fix gcc4 compile.
+
+*clip-useradmin-1.2.0 (10 Mar 2009)
+
+  10 Mar 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.2.0.ebuild, -clip-useradmin-1.1.21.ebuild:
+  Remove rm_admin user profile.
+
+*clip-useradmin-1.1.20 (03 Feb 2009)
+
+  03 feb 2009; Olivier Levillain <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.1.20.ebuild, -clip-useradmin-1.1.19.ebuild:
+  Change create_user to handle large user partitions. Remove SSH
+  passphrases. Check the diskspace available before trying to
+  create a user.
+
+*clip-useradmin-1.1.19 (17 Sep 2008)
+
+  17 Sep 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.1.19.ebuild, -clip-useradmin-1.1.18-r1.ebuild:
+  Fix unquoted password strings.
+
+*clip-useradmin-1.1.18-r1 (03 Sep 2008)
+
+  03 Sep 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.1.18-r1.ebuild, -clip-useradmin-1.1.18.ebuild:
+  nop-bump : some packages have been released with an invalid ccsd
+  digest for usersrvadmin. We force a bump here to make sure all 
+  versions are upgraded.
+
+*clip-useradmin-1.1.18 (02 Sep 2008)
+
+  02 Sep 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.1.18.ebuild, -clip-useradmin-1.1.17.ebuild:
+  Fix admin/audit user detection in modify_user.sh.
+
+  06 Aug 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  clip-useradmin-1.1.17.ebuild:
+  Update Manifest to reflect a cosmetic change in the distfile
+  (updated source version number).
+
+*clip-useradmin-1.1.17 (06 Aug 2008)
+
+  06 Aug 2008; Olivier Levillain <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.1.17.ebuild, -clip-useradmin-1.1.16.ebuild:
+  Add a line to look at the exit code of dd in case there is not
+  enough space on the disk, to get an early error.
+
+*clip-useradmin-1.1.16 (24 Jul 2008)
+
+  24 Jul 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.1.16.ebuild, -clip-useradmin-1.1.15.ebuild:
+  Remove trailing ':sha256' in dm-crypt cipher spec.
+  Modify the user's home partitions before calling usermod in 
+  modify_user.sh, to ensure the old password is properly checked.
+  Fix error checking on local variable affectation.
+
+*clip-useradmin-1.1.15 (22 Jul 2008)
+
+  22 Jul 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.1.15.ebuild, -clip-useradmin-1.1.14-r1.ebuild:
+  Authorize user partition sizes up to 4096M. Hardcode USERclip 
+  partition size to 8M for CLIP-RM users, so as not to loose any space.
+  Do not offer the rm_admin user choice on non-CLIP-RM systems.
+
+*clip-useradmin-1.1.14-r1 (16 Jul 2008)
+
+  16 Jul 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.1.14-r1.ebuild, -clip-useradmin-1.1.14.ebuild:
+  Switch to CCSD veriexec hashes.
+
+*clip-useradmin-1.1.14 (04 Jun 2008)
+
+  04 Jun 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.1.14.ebuild, -clip-useradmin-1.1.13.ebuild:
+  Do not create RM_H/RM_B partitions for core_admin/core_audit
+  profiles.
+
+*clip-useradmin-1.1.13 (19 May 2008)
+
+  19 May 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.1.13.ebuild, -clip-useradmin-1.1.12.ebuild:
+  Add password-checking through cracklib. 
+
+*clip-useradmin-1.1.12 (25 Apr 2008)
+
+  25 Apr 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.1.12.ebuild, -clip-useradmin-1.1.11.ebuild:
+  Fix XAUTHORITY read in error code.
+
+*clip-useradmin-1.1.11 (14 Apr 2008)
+
+  14 Apr 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.1.11.ebuild, -clip-useradmin-1.1.10.ebuild:
+  Do not generate USB keys on user creation, as they are generated
+  later on by the user herself.
+  Set up a correct SSH known_hosts file when creating audit/admin 
+  accounts.
+
+*clip-useradmin-1.1.10 (11 Apr 2008)
+
+  11 Apr 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.1.10.ebuild, -clip-useradmin-1.1.9-r1.ebuild:
+  Add support for usb keys at 'clip' level : create USB RSA keys
+  in CLIP when creating a core_audit or core_admin user, or when
+  creating a standard user on non-RM systems.
+
+*clip-useradmin-1.1.9-r1 (28 Mar 2008)
+
+  28 Mar 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.1.9-r1.ebuild, -clip-useradmin-1.1.9.ebuild:
+  Add CAP_MKNOD to inheritable caps, for cryptsetup-luks.
+
+*clip-useradmin-1.1.9 (27 Mar 2008)
+
+  27 Mar 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.1.9.ebuild, -clip-useradmin-1.1.8.ebuild:
+  Factorize some code, and adjust to new /user/tmp tmpfs mounting.
+
+*clip-useradmin-1.1.8 (18 Mar 2008)
+
+  18 Mar 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.1.8.ebuild, -clip-useradmin-1.1.7.ebuild:
+  Add more options to cryptpasswd, --rounds, --settings, --passvar,
+  etc.
+  Use clip-sub:userkeys.sub for key encryption and password generation.
+
+*clip-useradmin-1.1.7 (01 Feb 2008)
+
+  01 Feb 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.1.7.ebuild, -clip-useradmin-1.1.6.ebuild:
+  Replace hardcoded 'admin' and 'audit' in modify_user.sh by
+  still hardcoded '_admin' and '_audit'. Bug #76.
+
+*clip-useradmin-1.1.6 (06 Dec 2007)
+
+  11 Dec 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.1.6.ebuild, -clip-useradmin-1.1.5.ebuild:
+  Re-fix bug #98 (modify_user.sh was not updated).
+
+*clip-useradmin-1.1.5 (06 Dec 2007)
+
+  06 Dec 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.1.5.ebuild, -clip-useradmin-1.1.4.ebuild:
+  Switch to aes-lrw-benbi:sha256 for user home encryption, and to
+  aes-cbc for encrypting the keys.
+  
+*clip-useradmin-1.1.4 (30 Nov 2007)
+
+  30 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.1.4.ebuild, -clip-useradmin-1.1.3.ebuild:
+  Add 'before xdm' to /etc/init.d/useradmin.
+
+*clip-useradmin-1.1.3 (29 Nov 2007)
+
+  29 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.1.3.ebuild, -clip-useradmin-1.1.2.ebuild:
+  Merge EADS's 1.1.2 with following ChangeLog:
+
+	*clip-useradmin-1.1.2 (14 Nov 2007)
+
+	  14 Nov 2007; EADS D&S <clipos@ssi.gouv.fr>
+	  Ticket 32 correction (user creation script to be called during
+	  installation)
+
+*clip-useradmin-1.1.2 (08 Nov 2007)
+
+  08 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.1.2.ebuild:
+  Merge EADS's 1.1.1 with following ChangeLog:
+
+	*clip-useradmin-1.1.1 (07 Nov 2007)
+
+	  07 Nov 2007; EADS D&S <clipos@ssi.gouv.fr>
+	  Ticket 25 correction (rollback if an error occurs)
+	  Ticket 26 correction (core_admin creation)
+	  Ticket 35 correction (authorized_keys update in case of 
+	  user deletion)
+
+
+  07 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  Remove stale ebuilds before 1.1.1-r1.
+
+*clip-useradmin-1.1.1-r1 (30 Oct 2007)
+
+  30 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.1.1-r1.ebuild:
+  Support pam_exec_pwd and clip-user-mount as an alternative to 
+  pam_mount.
+
+*clip-useradmin-1.1.1 (23 Oct 2007)
+
+  23 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.1.1.ebuild:
+  Merge 1.0.1, 1.0.2 and 1.0.3 into 1.1. Remove the zero-filling
+  of the partition for now, as it isn't really needed at the level
+  we're aiming for (NB : could be useful for initializing the MACs
+  if we had integrity). get_user_connected() function rewritten in
+  the same way as get_user() in clip-usb-keys, through /var/run/utmp.
+  TODO : we should really factorize some of this code...
+  
+*clip-useradmin-1.0.3 (17 Oct 2007)
+
+  17 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.0.3.ebuild:
+  Add 'sync' calls in create_user to fix race conditions when 
+  creating large partitions.
+
+*clip-useradmin-1.0.2 (09 Oct 2007)
+
+  09 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.0.2.ebuild:
+  Launch Xdialog in the USERclip jail, with the identity of the 
+  user currently logged in, rather than as root outside of any 
+  jail.
+
+*clip-useradmin-1.1 (03 Oct 2007)
+
+  03 Oct 2007; EADS D&S <clipos@ssi.gouv.fr>
+  Ask twice the passwords.
+  Correct core_admin, core_audit and rm_admin accounts creation
+  (worked only the first time).
+
+*clip-useradmin-1.0.1 (03 Oct 2007)
+
+  03 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-useradmin-1.0.1.ebuild:
+  Create the partition file from /dev/zero rather than /dev/urandom
+  to try and speed up user creation. The partition is then initiliazed
+  by writing as many zeroes as possible on the cleartext mount.
+  TODO: check with crypto.
+  Mount options fixed for devctl.
+  Encryption algorithm switched to aes-cbc-essiv:sha256 to keep in line
+  with my pam_mount (dependency added).
+  
+*clip-useradmin-1.0 (04 Sep 2007)
+
+  04 Sep 2007; EADS D&S <clipos@ssi.gouv.fr>
+  Initial import.

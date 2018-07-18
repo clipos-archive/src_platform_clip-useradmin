@@ -1,0 +1,23 @@
+#!/sbin/runscript
+# SPDX-License-Identifier: LGPL-2.1-or-later
+# Copyright © 2007-2018 ANSSI. All Rights Reserved.
+
+depend() {
+	before xdm
+}
+
+start() {
+	ebegin "Starting useradmin"
+	start-stop-daemon --start --exec /sbin/usersrv
+	start-stop-daemon --start --exec /sbin/usersrvaudit
+	start-stop-daemon --start --exec /sbin/usersrvadmin
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping useradmin"
+	start-stop-daemon --stop --name usersrv
+	start-stop-daemon --stop --name usersrvaudit
+	start-stop-daemon --stop --name usersrvadmin
+	eend $?
+}
